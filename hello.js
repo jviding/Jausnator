@@ -6,9 +6,8 @@ var irc = require('irc');
 console.log("Bot starting...");
 var botname = "Jausnator3000";
 var ircServer = "irc.lut.fi";
-var portnum = 6668;
 var channel = '#botikkuna';
-console.log(botname+" travelling to "+ircServer+" port "+portnum);
+console.log(botname+" travelling to "+ircServer+"...");
 
 var bot = new irc.Client(ircServer, botname, {
     autoConnect: false
