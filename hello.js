@@ -5,8 +5,8 @@ var irc = require('irc');
 
 console.log("Bot starting...");
 var botname = "Jausnator3000";
-var ircServer = "irc.lut.fi";
-var channel = '#botikkuna';
+var ircServer = ""; // server be here
+var channel = '#'; // channel be here
 console.log(botname+" travelling to "+ircServer+"...");
 
 var bot = new irc.Client(ircServer, botname, {
@@ -29,8 +29,8 @@ Timer.atMidNight(function(){
 
 function readCommand(inp) {
   if(inp.toLowerCase()==="jasu mitä ruokaa") {
-    //printMenuToIRC();
-    bot.say(channel, "Jausnator is not being paid enough for this information. Beep...");
+    printMenuToIRC();
+    //bot.say(channel, "Jausnator is not being paid enough for this information. Beep...");
   }
   if(inp.toLowerCase()==="jasu mikä sää") {
     printWeatherToIRC();
@@ -71,8 +71,8 @@ function printStatusToIRC() {
     });
     bot.say(channel, "...");
     bot.say(channel, "Food service today:");
-    bot.say(channel, "  No food. You fat already.");
-    /*Menu.menuToday(function(result) {
+    /*bot.say(channel, "  No food. You fat already.");*/
+    Menu.menuToday(function(result) {
       var end = false;
       result.forEach(function(item) {
         bot.say(channel, item);
@@ -84,6 +84,6 @@ function printStatusToIRC() {
         bot.say(channel, "...");
         bot.say(channel, "Beep... Over...");
       }
-    });*/
+    });
   });
 };

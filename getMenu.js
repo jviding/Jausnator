@@ -27,7 +27,10 @@ function menuToStringArray(restaurant, data, callback) {
 	var array = [];
     array.push(" "+restaurant);
   	data.forEach(function(item) {
-  		if(item["price"]["name"] === 'Edullisesti') {
+      if(item === null) {
+        return;
+      }
+  		else if(item["price"]["name"] === 'Edullisesti') {
   			array.push(" -"+item["name"]);
   		}
   	});
